@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:met_market/core/utils/app_assets.dart';
 import 'package:met_market/core/utils/app_color.dart';
-import 'package:met_market/feature/home_page.dart';
+import '../../../on_bording_screen/presentation/view/on_boarding.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,9 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(const Duration(seconds: 2)).then(
       (value) {
-        Navigator.push(context, MaterialPageRoute(
+        Navigator.pushReplacement(context, MaterialPageRoute(
           builder: (context) {
-            return const HomePage();
+            return const OnBoarding();
           },
         ));
       },
