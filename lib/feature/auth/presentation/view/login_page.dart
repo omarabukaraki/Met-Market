@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:met_market/core/utils/app_color.dart';
-import 'package:met_market/feature/home_page.dart';
+import 'package:met_market/core/widget/custom_button.dart';
+import 'package:met_market/core/widget/custom_text_field.dart';
+
+import '../../../home/presentation/view/navigation_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -46,7 +49,7 @@ class LoginPage extends StatelessWidget {
               CustomButton(onTap: () {
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) {
-                    return const HomePage();
+                    return const NavigationPage();
                   },
                 ));
               }),
@@ -74,57 +77,6 @@ class LoginPage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.onTap});
-
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        margin: const EdgeInsets.all(16),
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.width / 6.5,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16), color: AppColor.kprimary),
-        child: const Center(
-          child: Text(
-            'Login',
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomTextField extends StatelessWidget {
-  const CustomTextField(
-      {super.key, required this.icon, required this.hintText, this.onChanged});
-  final IconData icon;
-  final String hintText;
-  final void Function(String)? onChanged;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: TextFormField(
-        onChanged: onChanged,
-        decoration: InputDecoration(
-            prefixIcon: Icon(
-              icon,
-              color: AppColor.kprimary,
-            ),
-            hintText: hintText,
-            border: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)))),
       ),
     );
   }
