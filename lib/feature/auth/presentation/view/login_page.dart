@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:met_market/core/utils/app_color.dart';
+import 'package:met_market/feature/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -36,29 +35,69 @@ class LoginPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.width / 9,
               ),
-              CustomTextField(
+              const CustomTextField(
                 hintText: 'Enter Your Email',
                 icon: Icons.email,
               ),
-              CustomTextField(
+              const CustomTextField(
                 hintText: 'Enter Your password',
                 icon: Icons.lock,
               ),
-              Container(
-                margin: const EdgeInsets.all(16),
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.width / 6.5,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: AppColor.kprimary),
-                child: const Center(
-                  child: Text(
-                    'Login',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
+              CustomButton(onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return const HomePage();
+                  },
+                ));
+              }),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 16),
+                child: Text(
+                  'Forget your password ?',
+                  style: TextStyle(color: AppColor.kFontSecondary),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("You don't have an account?",
+                        style: TextStyle(color: AppColor.kFontSecondary)),
+                    Text(
+                      " Create account",
+                      style: TextStyle(color: AppColor.kprimary),
+                    ),
+                  ],
                 ),
               )
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key, this.onTap});
+
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.all(16),
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.width / 6.5,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16), color: AppColor.kprimary),
+        child: const Center(
+          child: Text(
+            'Login',
+            style: TextStyle(color: Colors.white, fontSize: 20),
           ),
         ),
       ),

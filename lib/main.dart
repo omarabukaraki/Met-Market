@@ -23,7 +23,8 @@ class MetMarket extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Met Market',
-      // useInheritedMediaQuery: true,
+      debugShowCheckedModeBanner: false,
+      useInheritedMediaQuery: true,
       // locale: DevicePreview.locale(context),
       // builder: DevicePreview.appBuilder,
       theme: ThemeData(
@@ -31,7 +32,7 @@ class MetMarket extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColor.kprimary),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

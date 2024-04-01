@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../core/utils/app_color.dart';
-import '../login_page.dart';
+import '../auth/presentation/view/login_page.dart';
 import 'presentation/view/widget/on_bording_button.dart';
 import 'presentation/view/widget/skip_button.dart';
 
@@ -60,9 +60,16 @@ class OnBoardingScreen extends StatelessWidget {
 
         const SizedBox(height: 20),
         //start display description
-        Text(
-          description,
-          style: const TextStyle(fontSize: 18, color: Color(0xff78787C)),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Text(
+            description,
+            style: const TextStyle(
+              fontSize: 18,
+              color: Color(0xff78787C),
+            ),
+            textAlign: TextAlign.center,
+          ),
         ),
 
         const SizedBox(height: 50),
