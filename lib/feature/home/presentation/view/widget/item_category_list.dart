@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:met_market/core/utils/app_color.dart';
-
+import '../details_page.dart';
 import 'cover_image_component.dart';
 
 class ItemCategoryList extends StatelessWidget {
@@ -16,7 +16,7 @@ class ItemCategoryList extends StatelessWidget {
           const Row(
             children: [
               Text(
-                'Organic Fruits' + '   ',
+                'Organic Fruits' '   ',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Text(
@@ -38,8 +38,17 @@ class ItemCategoryList extends StatelessWidget {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return CoverItemComponent(
-                    image: image,
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return const ItemDetailsPage();
+                        },
+                      ));
+                    },
+                    child: CoverItemComponent(
+                      image: image,
+                    ),
                   );
                 },
               ),
