@@ -4,10 +4,8 @@ import 'package:met_market/core/utils/app_color.dart';
 import 'cover_image_component.dart';
 
 class ItemCategoryList extends StatelessWidget {
-  const ItemCategoryList({
-    super.key,
-  });
-
+  const ItemCategoryList({super.key, this.image});
+  final String? image;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -40,7 +38,9 @@ class ItemCategoryList extends StatelessWidget {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return const CoverItemComponent();
+                  return CoverItemComponent(
+                    image: image,
+                  );
                 },
               ),
             ),

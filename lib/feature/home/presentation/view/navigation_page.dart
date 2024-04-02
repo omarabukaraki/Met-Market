@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:met_market/feature/cart/cart_page.dart';
+import 'package:met_market/feature/favourite/favourite_page.dart';
 import 'package:met_market/feature/home/presentation/view/home_page.dart';
+import 'package:met_market/feature/my_account/my_account_page.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({super.key});
@@ -12,9 +15,9 @@ class _NavigationPageState extends State<NavigationPage> {
   int currentIndex = 0;
   final pages = const [
     HomePage(),
-    HomePage(),
-    HomePage(),
-    HomePage(),
+    CartPage(),
+    FavouritePage(),
+    MyAccountPage(),
   ];
 
   @override

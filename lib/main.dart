@@ -7,13 +7,12 @@ import 'package:met_market/feature/splash_screen/presentation/view/splash_screen
 import 'core/utils/app_color.dart';
 
 void main() {
-  runApp(
-    // const MetMarket()
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => const MetMarket(), // Wrap your app
-    ),
-  );
+  runApp(const MetMarket()
+      // DevicePreview(
+      //   enabled: !kReleaseMode,
+      //   builder: (context) => const MetMarket(), // Wrap your app
+      // ),
+      );
 }
 
 class MetMarket extends StatelessWidget {
@@ -26,8 +25,8 @@ class MetMarket extends StatelessWidget {
       title: 'Met Market',
       debugShowCheckedModeBanner: false,
       useInheritedMediaQuery: true,
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
+      // locale: DevicePreview.locale(context),
+      // builder: DevicePreview.appBuilder,
       theme: ThemeData(
         fontFamily: 'Poppins',
         colorScheme: ColorScheme.fromSeed(seedColor: AppColor.kprimary),

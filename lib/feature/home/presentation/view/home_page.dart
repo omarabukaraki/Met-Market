@@ -46,7 +46,8 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 const ItemCategoryList(),
-                const ItemCategoryList()
+                const ItemCategoryList(image: 'assets/images/prokly.png'),
+                const ItemCategoryList(image: 'assets/images/vag.png')
               ],
             ),
           ),

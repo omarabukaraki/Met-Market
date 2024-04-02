@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:met_market/core/utils/app_color.dart';
 
 class CoverItemComponent extends StatelessWidget {
-  const CoverItemComponent({
-    super.key,
-  });
-
+  const CoverItemComponent({super.key, this.image});
+  final String? image;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -23,7 +21,7 @@ class CoverItemComponent extends StatelessWidget {
                 width: MediaQuery.of(context).size.width / 3.5,
                 height: MediaQuery.of(context).size.width / 3,
                 child: Image.asset(
-                  'assets/images/stropary.png',
+                  image ?? 'assets/images/stropary.png',
                   fit: BoxFit.cover,
                   height: MediaQuery.of(context).size.width / 3,
                 ),
