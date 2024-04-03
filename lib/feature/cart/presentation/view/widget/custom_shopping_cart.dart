@@ -11,7 +11,7 @@ class CustomShoppingCart extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height / 7,
+      height: MediaQuery.of(context).size.height / 6.5,
       decoration: const BoxDecoration(
           border: Border(
               bottom: BorderSide(color: AppColor.kFontSecondary, width: 0.2))),
