@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:met_market/core/utils/app_color.dart';
+import 'package:met_market/core/widget/app_bar_details_page.dart';
+import 'package:met_market/core/widget/custom_small_btn.dart';
 
 import 'widget/widget_details_pages/nutrition_list.dart';
 
@@ -9,14 +11,7 @@ class ItemDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'DETAILS',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-        ),
-        backgroundColor: AppColor.kprimary,
-        foregroundColor: Colors.white,
-      ),
+      appBar: const DetailsAppBar(),
       body: Column(
         children: [
           Expanded(
@@ -72,31 +67,17 @@ class ItemDetailsPage extends StatelessWidget {
             // color: Colors.amber,
             width: double.infinity,
             height: double.infinity,
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                Text(
                   'S' ' 300 Per/ kg',
                   style: TextStyle(
                       color: Color(0xff393939),
                       fontWeight: FontWeight.w600,
                       fontSize: 16),
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width / 2.5,
-                  height: MediaQuery.of(context).size.height / 18,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: AppColor.kprimary),
-                  child: const Center(
-                      child: Text(
-                    'Buy Now',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15),
-                  )),
-                )
+                CustomSmallButton()
               ],
             ),
           ))
