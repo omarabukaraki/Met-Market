@@ -13,34 +13,42 @@ class MyAccountPage extends StatefulWidget {
 class _MyAccountPageState extends State<MyAccountPage> {
   List<Map<String, dynamic>> data = [
     {
+      'id': 'MyOrdersPage',
       'label': 'My Orders',
       'icon': Icons.shopping_bag,
     },
     {
+      'id': 'FavouritePage',
       'label': 'Favourites',
       'icon': Icons.favorite,
     },
     {
+      'id': 'SettingsPage',
       'label': 'Settings',
       'icon': Icons.settings,
     },
     {
+      'id': 'CartPage',
       'label': 'My Cart',
       'icon': Icons.shopping_cart,
     },
     {
+      'id': 'RatePage',
       'label': 'Rate us',
       'icon': Icons.star_half_rounded,
     },
     {
+      'id': 'ReferFriend',
       'label': 'Refer a Friend',
       'icon': Icons.share,
     },
     {
+      'id': 'HelpPage',
       'label': 'Help',
       'icon': Icons.help,
     },
     {
+      'id': 'LogOutPage',
       'label': 'Log Out',
       'icon': Icons.logout,
     },
@@ -57,9 +65,14 @@ class _MyAccountPageState extends State<MyAccountPage> {
             SliverList.builder(
               itemCount: data.length,
               itemBuilder: (context, index) {
-                return MyAccountComponent(
-                  label: data[index]['label'],
-                  icon: data[index]['icon'],
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, data[index]['id']);
+                  },
+                  child: MyAccountComponent(
+                    label: data[index]['label'],
+                    icon: data[index]['icon'],
+                  ),
                 );
               },
             )

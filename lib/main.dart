@@ -1,8 +1,11 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:met_market/feature/cart/presentation/view/cart_page.dart';
+import 'package:met_market/feature/favourite/presentation/view/favourite_page.dart';
 
 import 'package:met_market/feature/splash_screen/presentation/view/splash_screen.dart';
+import 'package:met_market/help_page.dart';
 
 import 'core/utils/app_color.dart';
 
@@ -34,6 +37,11 @@ class MetMarket extends StatelessWidget {
             seedColor: AppColor.kprimary, background: Colors.white),
         useMaterial3: true,
       ),
+      routes: {
+        HelpPage.id: (context) => const HelpPage(),
+        FavouritePage.id: (context) => const FavouritePage(),
+        CartPage.id: (context) => const CartPage(),
+      },
       home: const SplashScreen(),
     );
   }

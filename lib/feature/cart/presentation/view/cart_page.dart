@@ -7,12 +7,13 @@ import 'widget/location_component.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
-
+  static const String id = 'CartPage';
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: DetailsAppBar(
         text: 'Shopping Cart',
+        automaticallyImplyLeading: false,
       ),
       floatingActionButton: CustomSmallButton(
         label: 'Place Order',
