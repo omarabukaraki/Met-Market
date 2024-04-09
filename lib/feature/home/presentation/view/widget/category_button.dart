@@ -16,8 +16,7 @@ class CategoryButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color:
-                isSelect == true ? const Color(0xffCC7D00) : Colors.transparent,
+            color: isSelect == true ? AppColor.kBtn : Colors.transparent,
           ),
           child: Text(
             categoryName,

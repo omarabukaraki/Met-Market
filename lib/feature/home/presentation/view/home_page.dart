@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:met_market/core/utils/app_color.dart';
 import 'package:met_market/core/widget/custom_app_bar.dart';
 import 'package:met_market/core/widget/custom_search_bar.dart';
 import 'widget/category_button.dart';
@@ -9,11 +10,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.transparent,
-        child: SafeArea(
-          child: SingleChildScrollView(
+    return Container(
+      color: AppColor.kprimary,
+      child: SafeArea(
+        child: Scaffold(
+          body: SingleChildScrollView(
             child: Column(
               children: [
                 const Stack(

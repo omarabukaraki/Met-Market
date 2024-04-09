@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:met_market/feature/cart/presentation/view/cart_page.dart';
-import 'package:met_market/feature/favourite/favourite_page.dart';
+import 'package:met_market/feature/favourite/presentation/view/favourite_page.dart';
 import 'package:met_market/feature/home/presentation/view/home_page.dart';
-import 'package:met_market/feature/my_account/my_account_page.dart';
+import 'package:met_market/feature/my_account/presentation/view/my_account_page.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({super.key});

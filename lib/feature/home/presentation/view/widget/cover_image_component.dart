@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:met_market/core/utils/app_color.dart';
+import 'package:met_market/core/widget/rating_component.dart';
 
 class CoverItemComponent extends StatelessWidget {
   const CoverItemComponent({super.key, this.image});
@@ -11,7 +11,7 @@ class CoverItemComponent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
-            alignment: Alignment(0.55, -0.9),
+            alignment: const Alignment(0.55, -0.9),
             children: [
               Container(
                 margin: const EdgeInsets.only(right: 16),
@@ -30,15 +30,9 @@ class CoverItemComponent extends StatelessWidget {
                 radius: (MediaQuery.of(context).size.width / 3.5) * 0.15,
                 backgroundColor: Colors.white,
                 child: const Center(
-                  child:
-                      // Icon(
-                      //   Icons.favorite_rounded,
-                      //   color: Colors.red,
-                      //   size: 20,
-                      // )
-                      Icon(
+                  child: Icon(
                     Icons.favorite_border_rounded,
-                    color: Colors.orange,
+                    color: Color(0xffF31559),
                     size: 20,
                   ),
                 ),
@@ -47,35 +41,7 @@ class CoverItemComponent extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 4),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.star_rate_rounded,
-                  size: 14,
-                  color: Colors.orange,
-                ),
-                Icon(
-                  Icons.star_rate_rounded,
-                  size: 14,
-                  color: Colors.orange,
-                ),
-                Icon(
-                  Icons.star_rate_rounded,
-                  size: 14,
-                  color: Colors.orange,
-                ),
-                Icon(
-                  Icons.star_rate_rounded,
-                  size: 14,
-                  color: Colors.orange,
-                ),
-                Icon(
-                  Icons.star_rate_rounded,
-                  size: 14,
-                  color: AppColor.kFontSecondary,
-                ),
-              ],
-            ),
+            child: RatingComponent(),
           ),
           const Text(
             'Strawberry',
