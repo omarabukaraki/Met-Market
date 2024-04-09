@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:met_market/feature/notification/presentation/view/notification_page.dart';
 import '../utils/app_color.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -15,20 +16,29 @@ class CustomAppBar extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: 16, vertical: MediaQuery.of(context).size.height / 50),
-        child: const Row(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               'Met Market',
               style: TextStyle(
                   fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.bold),
             ),
-            Icon(
-              Icons.notifications,
-              color: Colors.white,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return const NotificationPage();
+                  },
+                ));
+              },
+              child: const Icon(
+                Icons.notifications,
+                color: Colors.white,
+              ),
             )
           ],
         ),
