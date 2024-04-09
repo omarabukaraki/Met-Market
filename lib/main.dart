@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:met_market/feature/cart/presentation/view/cart_page.dart';
 import 'package:met_market/feature/favourite/presentation/view/favourite_page.dart';
+import 'package:met_market/feature/my_orders/presentation/view/my_orders_page.dart';
 
 import 'package:met_market/feature/splash_screen/presentation/view/splash_screen.dart';
 import 'package:met_market/help_page.dart';
@@ -41,6 +42,7 @@ class MetMarket extends StatelessWidget {
         HelpPage.id: (context) => const HelpPage(),
         FavouritePage.id: (context) => const FavouritePage(),
         CartPage.id: (context) => const CartPage(),
+        MyOrdersPage.id: (context) => const MyOrdersPage()
       },
       home: const SplashScreen(),
     );
